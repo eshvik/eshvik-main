@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESHVIK — India's Premier Digital Ecosystem</title>
+  <meta name="description" content="ESHVIK — India's most integrated digital ecosystem. AI, Web, Health, Tech, Agro, Business & Manpower. Membership from ₹11,000/month.">
+  <meta name="keywords" content="ESHVIK, India digital ecosystem, AI platform, web services, health tech, agro tech, business hub, manpower India">
+  <meta name="author" content="Eshvik Mehra">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://eshvik.in/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eshvik.in/">
+  <meta property="og:title" content="ESHVIK — India's Premier Digital Ecosystem">
+  <meta property="og:description" content="AI • Web • Health • Tech • Agro • Business • Manpower — One Platform. Built for India.">
+  <meta property="og:image" content="https://eshvik.in/og-image.jpg">
+  <meta property="og:site_name" content="ESHVIK">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ESHVIK_IN">
+  <meta name="twitter:title" content="ESHVIK — India's Premier Digital Ecosystem">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Raleway:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+  --bk:#000; --bk2:#060606; --bk3:#0e0e0e; --bk4:#161616; --bk5:#222;
+  --wh:#fff; --wh2:#eee; --wh3:#bbb; --wh4:#777; --wh5:#333;
+  --line:rgba(255,255,255,0.07); --line2:rgba(255,255,255,0.15);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bk);font-family:'Raleway',sans-serif;color:var(--wh);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* NOISE */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;opacity:0.6;
+}
+
+/* NAV */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:22px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:all 0.4s;
+}
+.nav.scrolled{
+  background:rgba(0,0,0,0.94);backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--line);padding:14px 48px;
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;font-weight:700;letter-spacing:6px;text-transform:uppercase;
+}
+.nav-logo small{display:block;font-family:'Raleway',sans-serif;font-size:0.5rem;letter-spacing:4px;color:var(--wh5);font-weight:400;margin-top:2px;}
+.nav-links{display:flex;align-items:center;gap:0;list-style:none;}
+.nav-links a{font-size:0.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--wh4);padding:8px 14px;transition:color 0.3s;}
+.nav-links a:hover{color:var(--wh);}
+.nav-cta{
+  display:flex;align-items:center;gap:8px;
+  font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:11px 24px;border:1px solid rgba(255,255,255,0.25);color:var(--wh);
+  transition:all 0.3s;
+}
+.nav-cta:hover{background:var(--wh);color:var(--bk);}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:130px 28px 80px;
+  position:relative;z-index:10;overflow:hidden;
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+  background-size:80px 80px;
+  animation:gridMove 50s linear infinite;
+}
+@keyframes gridMove{0%{background-position:0 0;}100%{background-position:80px 80px;}}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:14px;
+  font-size:0.62rem;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--wh5);
+  margin-bottom:44px;position:relative;z-index:1;
+  animation:fadeD 1s ease both;
+}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:36px;height:1px;background:var(--wh5);}
+
+.hero-h1{
+  position:relative;z-index:1;
+  animation:fadeD 1s 0.1s ease both;
+}
+.hero-h1 h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(4.5rem,15vw,13rem);
+  font-weight:900;letter-spacing:-0.025em;line-height:0.88;
+  color:var(--wh);
+  text-shadow:
+    2px 2px 0 #2a2a2a,4px 4px 0 #1a1a1a,6px 6px 0 #111,
+    8px 8px 20px rgba(0,0,0,0.9),0 0 100px rgba(255,255,255,0.03);
+}
+.hero-h1 h1 em{
+  display:block;font-style:italic;font-size:0.28em;
+  font-weight:400;letter-spacing:0.3em;color:var(--wh4);
+  text-shadow:none;margin-top:20px;
+}
+.vline{
+  width:1px;height:56px;
+  background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.25),transparent);
+  margin:44px auto;position:relative;z-index:1;
+  animation:fadeU 1s 0.3s ease both;
+}
+.hero-sub{
+  font-size:0.78rem;font-weight:300;letter-spacing:4px;text-transform:uppercase;
+  color:var(--wh4);max-width:520px;margin:0 auto 52px;line-height:2.2;
+  position:relative;z-index:1;animation:fadeU 1s 0.4s ease both;
+}
+.hero-pills{
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+  margin-bottom:52px;position:relative;z-index:1;
+  animation:fadeU 1s 0.5s ease both;
+}
+.pill{
+  font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:8px 18px;border:1px solid var(--bk5);color:var(--wh5);transition:all 0.3s;
+}
+.pill:hover{border-color:var(--wh3);color:var(--wh3);}
+.hero-btns{
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:center;
+  position:relative;z-index:1;animation:fadeU 1s 0.6s ease both;
+}
+.btn-w{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:17px 42px;background:var(--wh);color:var(--bk);
+  font-size:0.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  transition:all 0.3s;
+}
+.btn-w:hover{background:transparent;color:var(--wh);outline:1px solid var(--wh);}
+.btn-b{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:17px 38px;border:1px solid var(--bk5);color:var(--wh3);
+  font-size:0.72rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  transition:all 0.3s;
+}
+.btn-b:hover{border-color:var(--wh);color:var(--wh);}
+.scroll-hint{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  font-size:0.55rem;letter-spacing:3px;text-transform:uppercase;color:var(--wh5);
+  z-index:1;animation:fadeU 1s 1.2s ease both;
+}
+.scroll-hint i{animation:bob 2s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(5px);}}
+
+/* STATS */
+.stats{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  position:relative;z-index:10;
+}
+.stat{
+  padding:44px 24px;text-align:center;
+  border-right:1px solid var(--line);
+  transition:background 0.3s;
+}
+.stat:last-child{border-right:none;}
+.stat:hover{background:rgba(255,255,255,0.02);}
+.stat-n{
+  font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;
+  display:block;line-height:1;margin-bottom:8px;
+}
+.stat-l{font-size:0.58rem;letter-spacing:3px;text-transform:uppercase;color:var(--wh5);}
+
+/* SECTION */
+.sec{padding:110px 48px;position:relative;z-index:10;}
+.sec-sm{padding:70px 48px;position:relative;z-index:10;}
+.sh{margin-bottom:64px;}
+.sh.c{text-align:center;}
+.stag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:0.58rem;letter-spacing:4px;text-transform:uppercase;color:var(--wh5);
+  margin-bottom:18px;
+}
+.stag::before{content:'';width:20px;height:1px;background:var(--wh5);}
+.sh.c .stag{justify-content:center;}
+.sh.c .stag::before{display:none;}
+.sh2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4.5vw,3.8rem);font-weight:700;
+  letter-spacing:-0.02em;line-height:1.1;
+}
+.sh2 em{font-style:italic;color:var(--wh3);}
+
+/* SERVICES */
+.svc-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);
+}
+.svc{
+  background:var(--bk);padding:48px 36px;
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+  transition:background 0.4s;text-decoration:none;color:inherit;
+}
+.svc::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:var(--wh);transform:scaleX(0);transform-origin:left;
+  transition:transform 0.5s cubic-bezier(0.23,1,0.32,1);
+}
+.svc:hover::before{transform:scaleX(1);}
+.svc:hover{background:rgba(255,255,255,0.025);}
+.svc-n{font-family:'Playfair Display',serif;font-size:0.65rem;color:var(--wh5);letter-spacing:3px;margin-bottom:28px;display:block;}
+.svc-ico{font-size:1.8rem;color:var(--wh3);margin-bottom:20px;transition:all 0.4s;display:block;}
+.svc:hover .svc-ico{transform:scale(1.1);color:var(--wh);}
+.svc h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;margin-bottom:12px;letter-spacing:-0.01em;}
+.svc p{font-size:0.82rem;color:var(--wh4);line-height:1.8;margin-bottom:28px;flex:1;font-weight:300;}
+.svc-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:0.6rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--wh5);transition:all 0.3s;
+  opacity:0;transform:translateY(6px);
+}
+.svc:hover .svc-cta{opacity:1;transform:translateY(0);color:var(--wh);}
+.svc-cta i{transition:transform 0.3s;}
+.svc:hover .svc-cta i{transform:translateX(4px);}
+.svc-url{font-size:0.55rem;letter-spacing:2px;color:var(--wh5);margin-top:6px;display:block;}
+
+/* MEMBERSHIP */
+.mem-section{background:var(--bk2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.mem-layout{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);}
+.mem-l{background:var(--bk2);padding:80px 60px;display:flex;flex-direction:column;justify-content:center;}
+.mem-r{background:var(--bk2);padding:52px;display:flex;flex-direction:column;gap:1px;}
+.mp{
+  background:var(--bk3);padding:28px 32px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  transition:all 0.4s;text-decoration:none;color:inherit;flex:1;
+  position:relative;overflow:hidden;border:none;
+}
+.mp::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;
+  width:2px;background:var(--wh);transform:scaleY(0);transition:transform 0.4s;
+}
+.mp:hover::before{transform:scaleY(1);}
+.mp:hover{background:rgba(255,255,255,0.03);}
+.mp-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;}
+.mp-sub{font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--wh5);margin-top:4px;}
+.mp-price{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--wh2);white-space:nowrap;}
+.mp-price small{font-size:0.5em;color:var(--wh5);font-family:'Raleway',sans-serif;font-weight:400;display:block;letter-spacing:1px;}
+.mp.vip-row{background:var(--wh);color:var(--bk);}
+.mp.vip-row::before{background:var(--bk);}
+.mp.vip-row:hover{background:var(--wh2);}
+.mp.vip-row .mp-price{color:var(--bk);}
+.mp.vip-row .mp-sub,.mp.vip-row .mp-price small{color:#888;}
+
+/* WHY */
+.why-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);
+  margin-top:56px;
+}
+.wc{background:var(--bk);padding:44px 32px;transition:background 0.3s;}
+.wc:hover{background:rgba(255,255,255,0.02);}
+.wc-n{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:rgba(255,255,255,0.05);line-height:1;margin-bottom:18px;display:block;}
+.wc h4{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;margin-bottom:10px;}
+.wc p{font-size:0.8rem;color:var(--wh4);line-height:1.8;font-weight:300;}
+
+/* SOCIAL */
+.soc-section{border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.soc-row{display:flex;flex-wrap:wrap;border-left:1px solid var(--line);}
+.soc{
+  flex:1;min-width:120px;padding:36px 20px;
+  border-right:1px solid var(--line);
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  text-decoration:none;color:var(--wh4);transition:all 0.3s;
+  position:relative;overflow:hidden;
+}
+.soc::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:1px;background:var(--wh);transform:scaleX(0);transition:transform 0.4s;
+}
+.soc:hover::after{transform:scaleX(1);}
+.soc:hover{background:rgba(255,255,255,0.03);color:var(--wh);}
+.soc i{font-size:1.3rem;}
+.soc span{font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;text-align:center;line-height:1.6;}
+
+/* CTA */
+.cta-sec{
+  padding:130px 48px;text-align:center;
+  position:relative;z-index:10;overflow:hidden;
+}
+.cta-sec::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(255,255,255,0.025) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-sec h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.4rem,6vw,5.5rem);font-weight:900;
+  letter-spacing:-0.025em;line-height:1.05;margin-bottom:24px;
+}
+.cta-sec h2 em{font-style:italic;color:var(--wh3);}
+.cta-sec p{font-size:0.8rem;color:var(--wh4);letter-spacing:3px;text-transform:uppercase;margin-bottom:48px;font-weight:300;}
+.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+
+/* FOOTER */
+.footer{background:var(--bk2);border-top:1px solid var(--line);position:relative;z-index:10;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);}
+.ft{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:56px;padding:80px 48px 60px;
+  border-bottom:1px solid var(--line);
+}
+.fb .logo{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;letter-spacing:5px;display:block;margin-bottom:4px;}
+.fb .lsub{font-size:0.55rem;letter-spacing:4px;text-transform:uppercase;color:var(--wh5);display:block;margin-bottom:22px;}
+.fb p{font-size:0.8rem;color:var(--wh4);line-height:1.9;font-weight:300;margin-bottom:28px;max-width:300px;}
+.sub-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;}
+.stg{font-size:0.55rem;letter-spacing:1.5px;text-transform:lowercase;padding:5px 11px;border:1px solid var(--line);color:var(--wh5);transition:all 0.3s;}
+.stg:hover{border-color:var(--wh3);color:var(--wh3);}
+.pwd{display:inline-flex;align-items:center;gap:8px;font-size:0.55rem;letter-spacing:3px;text-transform:uppercase;color:var(--wh5);padding:9px 16px;border:1px solid var(--line2);}
+.fc h5{font-size:0.58rem;letter-spacing:4px;text-transform:uppercase;color:var(--wh5);margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+.fl{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.fl a,.fl li{font-size:0.8rem;color:var(--wh4);font-weight:300;display:flex;align-items:center;gap:10px;transition:color 0.3s;padding:1px 0;}
+.fl a:hover{color:var(--wh);}
+.fl a i,.fl li i{font-size:0.7rem;color:var(--wh5);width:14px;}
+.fb2{padding:22px 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;}
+.fb2l{font-size:0.68rem;color:var(--wh5);letter-spacing:1.5px;}
+.fb2l a{color:var(--wh4);transition:color 0.2s;}
+.fb2l a:hover{color:var(--wh);}
+.fb2r{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.fb2r a{font-size:0.65rem;color:var(--wh5);letter-spacing:1px;transition:color 0.2s;}
+.fb2r a:hover{color:var(--wh);}
+.fbadge{font-size:0.58rem;letter-spacing:2px;color:var(--wh5);padding:5px 12px;border:1px solid var(--line);}
+
+/* FLOAT */
+.fwa{
+  position:fixed;bottom:28px;right:28px;z-index:999;
+  width:54px;height:54px;background:var(--wh);color:var(--bk);
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;
+  box-shadow:0 6px 28px rgba(0,0,0,0.4);transition:all 0.3s;
+}
+.fwa:hover{background:#25D366;color:white;transform:translateY(-4px);}
+
+/* ANIMATIONS */
+@keyframes fadeD{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeU{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.rv{opacity:0;transform:translateY(36px);transition:opacity 0.9s cubic-bezier(0.23,1,0.32,1),transform 0.9s cubic-bezier(0.23,1,0.32,1);}
+.rv.in{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.ft{grid-template-columns:1fr 1fr;gap:40px;}.stats{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:900px){.nav{padding:16px 24px;}.nav.scrolled{padding:12px 24px;}.sec,.sec-sm{padding:80px 24px;}.cta-sec{padding:90px 24px;}.ft{padding:60px 24px;}.fb2{padding:18px 24px;}.mem-l{padding:60px 36px;}.mem-r{padding:36px;}}
+@media(max-width:768px){.nav-links{display:none;}.svc-grid{grid-template-columns:1fr;}.ft{grid-template-columns:1fr;}.stats{grid-template-columns:repeat(2,1fr);}.stat{border-right:none;border-bottom:1px solid var(--line);}.soc-row{flex-direction:column;}.soc{flex-direction:row;justify-content:flex-start;padding:20px 24px;}.mem-layout{grid-template-columns:1fr;}.hero{padding:110px 20px 80px;}}
+@media(max-width:480px){.hero-btns,.cta-btns{flex-direction:column;align-items:center;}.fb2{flex-direction:column;text-align:center;}.stats{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">ESHVIK<small>Digital Ecosystem</small></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#membership">Membership</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+  <a href="https://wa.me/919116356157?text=Hello%20ESHVIK%20Team" target="_blank" class="nav-cta">
+    <i class="fab fa-whatsapp"></i> Chat Now
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-eyebrow">India's Premier Digital Ecosystem</div>
+  <div class="hero-h1">
+    <h1>ESHVIK<em>Built for India. Built for Tomorrow.</em></h1>
+  </div>
+  <div class="vline"></div>
+  <p class="hero-sub">Seven Verticals &bull; One Vision<br>AI &bull; Web &bull; Health &bull; Tech &bull; Agro &bull; Business &bull; Manpower</p>
+  <div class="hero-pills">
+    <span class="pill">AI Platform</span>
+    <span class="pill">Web Services</span>
+    <span class="pill">Health Tech</span>
+    <span class="pill">Drones &amp; Robots</span>
+    <span class="pill">Hydroponic Agro</span>
+    <span class="pill">Business Hub</span>
+    <span class="pill">Manpower</span>
+  </div>
+  <div class="hero-btns">
+    <a href="/membership.html" class="btn-w"><i class="fas fa-crown"></i> View Membership</a>
+    <a href="https://wa.me/919116356157?text=Hello%20ESHVIK%2C%20I%20want%20to%20learn%20more" target="_blank" class="btn-b"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+    <a href="tel:+917696761617" class="btn-b"><i class="fas fa-phone-alt"></i> Call Us</a>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- STATS -->
+<div class="stats rv">
+  <div class="stat"><span class="stat-n">7</span><span class="stat-l">Verticals</span></div>
+  <div class="stat"><span class="stat-n">24/7</span><span class="stat-l">Support</span></div>
+  <div class="stat"><span class="stat-n">₹2,999</span><span class="stat-l">Web Starting</span></div>
+  <div class="stat"><span class="stat-n">100+</span><span class="stat-l">AI Tools</span></div>
+  <div class="stat"><span class="stat-n">5</span><span class="stat-l">Member Tiers</span></div>
+</div>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="sh rv">
+    <div class="stag">Our Ecosystem</div>
+    <h2 class="sh2">Seven Powerful<br><em>Verticals</em></h2>
+  </div>
+  <div class="svc-grid rv">
+
+    <a href="https://ai.eshvik.in" target="_blank" rel="noopener" class="svc">
+      <span class="svc-n">01</span>
+      <i class="fas fa-microchip svc-ico"></i>
+      <h3>AI Platform</h3>
+      <p>Free AI tools, LLMs & automation for every Indian. Directory of AI schools, colleges & globally launched AI products — all at one platform.</p>
+      <span class="svc-cta">Explore <i class="fas fa-arrow-right"></i></span>
+      <span class="svc-url">ai.eshvik.in</span>
+    </a>
+
+    <a href="https://web.eshvik.in" target="_blank" rel="noopener" class="svc">
+      <span class="svc-n">02</span>
+      <i class="fas fa-code svc-ico"></i>
+      <h3>Web Services</h3>
+      <p>Custom websites, apps & software development. Starter ₹2,999 — Advanced ₹10,999 — Pro ₹50,999 — Enterprise custom pricing available.</p>
+      <span class="svc-cta">Build Now <i class="fas fa-arrow-right"></i></span>
+      <span class="svc-url">web.eshvik.in</span>
+    </a>
+
+    <a href="https://health.eshvik.in" target="_blank" rel="noopener" class="svc">
+      <span class="svc-n">03</span>
+      <i class="fas fa-heartbeat svc-ico"></i>
+      <h3>Health Ecosystem</h3>
+      <p>Healthcare at home — Allopathic, Ayurveda & Homeopathic. Home ICU, physiotherapy, specialist doctors, patient care & spa wellness.</p>
+      <span class="svc-cta">Get Care <i class="fas fa-arrow-right"></i></span>
+      <span class="svc-url">health.eshvik.in</span>
+    </a>
+
+    <a href="https://tech.eshvik.in" target="_blank" rel="noopener" class="svc">
+      <span class="svc-n">04</span>
+      <i class="fas fa-robot svc-ico"></i>
+      <h3>Tech Hub</h3>
+      <p>AI-powered drones — security, delivery & tracking. Factory robots, robo assistants, customized gadgets, air drone cars & future tech.</p>
+      <span class="svc-cta">Future Tech <i class="fas fa-arrow-right"></i></span>
+      <span class="svc-url">tech.eshvik.in</span>
+    </a>
+
+    <a href="https://agro.eshvik.in" target="_blank" rel="noopener" class="svc">
+      <span class="svc-n">05</span>
+      <i class="fas fa-seedling svc-ico"></i>
+      <h3>Agro Tech</h3>
+      <p>Groundless hydroponic farming for small spaces. Dirty weather, polluted air, no soil — no problem. Complete modern farming solutions.</p>
+      <span class="svc-cta">Grow Smart <i class="fas fa-arrow-right"></i></span>
+      <span class="svc-url">agro.eshvik.in</span>
+    </a>
+
+    <a href="https://business.eshvik.in" target="_blank" rel="noopener" class="svc">
+      <span class="svc-n">06</span>
+      <i class="fas fa-chart-line svc-ico"></i>
+      <h3>Business Hub</h3>
+      <p>Open new business with government certificates, wholesalers list, verified business & property directory — complete entrepreneurial support.</p>
+      <span class="svc-cta">Start Now <i class="fas fa-arrow-right"></i></span>
+      <span class="svc-url">business.eshvik.in</span>
+    </a>
+
+    <a href="https://manpower.eshvik.in" target="_blank" rel="noopener" class="svc">
+      <span class="svc-n">07</span>
+      <i class="fas fa-users svc-ico"></i>
+      <h3>Manpower</h3>
+      <p>High-skilled verified professionals across all fields. Global digital experts, freelancers & blue-collar talent — trusted worldwide.</p>
+      <span class="svc-cta">Find Talent <i class="fas fa-arrow-right"></i></span>
+      <span class="svc-url">manpower.eshvik.in</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section class="sec-sm mem-section" id="membership">
+  <div class="sh c rv" style="padding:0 0 48px;">
+    <div class="stag">Exclusive Access</div>
+    <h2 class="sh2">ESHVIK <em>Membership</em></h2>
+  </div>
+  <div class="mem-layout rv">
+    <div class="mem-l">
+      <p style="font-size:0.58rem;letter-spacing:4px;text-transform:uppercase;color:var(--wh5);margin-bottom:18px;">Why Join</p>
+      <h3 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;line-height:1.25;margin-bottom:22px;">Privileges Reserved<br><em style="font-style:italic;color:var(--wh3);">for the Few</em></h3>
+      <p style="font-size:0.82rem;color:var(--wh4);line-height:1.9;font-weight:300;margin-bottom:36px;">Spa access, specialist healthcare, personal branding, AI assistant, digital marketing & India's most exclusive networks — all under one membership.</p>
+      <a href="/membership.html" class="btn-w" style="align-self:flex-start;"><i class="fas fa-crown"></i> View All Plans</a>
+    </div>
+    <div class="mem-r">
+      <a href="/membership.html" class="mp">
+        <div><div class="mp-name">Silver</div><div class="mp-sub">10 Spa Entries / Month</div></div>
+        <div class="mp-price">₹11,000<small>/month</small></div>
+      </a>
+      <a href="/membership.html" class="mp">
+        <div><div class="mp-name">Gold</div><div class="mp-sub">Spa + Healthcare + Doctor</div></div>
+        <div class="mp-price">₹16,000<small>/month</small></div>
+      </a>
+      <a href="/membership.html" class="mp">
+        <div><div class="mp-name">Platinum</div><div class="mp-sub">Spa + Website + 2 Doctors</div></div>
+        <div class="mp-price">₹21,000<small>/month</small></div>
+      </a>
+      <a href="/membership.html" class="mp vip-row">
+        <div><div class="mp-name">VIP &amp; Supreme</div><div class="mp-sub" style="color:#666;">From ₹1,00,000 — Everything</div></div>
+        <div class="mp-price" style="color:var(--bk);"><i class="fas fa-crown"></i><small style="color:#777;">Exclusive</small></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" id="about">
+  <div class="sh rv">
+    <div class="stag">Why ESHVIK</div>
+    <h2 class="sh2">Built for<br><em>Bharat</em></h2>
+  </div>
+  <div class="why-grid rv">
+    <div class="wc"><span class="wc-n">01</span><h4>Made in India</h4><p>100% indigenous platform built by Indians, for India's unique landscape — language, culture and commerce.</p></div>
+    <div class="wc"><span class="wc-n">02</span><h4>Affordable Excellence</h4><p>Premium quality at Indian prices. Websites from ₹2,999. AI tools free. Membership starting ₹11,000/month.</p></div>
+    <div class="wc"><span class="wc-n">03</span><h4>All-in-One</h4><p>Seven verticals seamlessly connected. From idea to execution — one team, one platform, zero friction.</p></div>
+    <div class="wc"><span class="wc-n">04</span><h4>24/7 Human Support</h4><p>Real humans — not bots. WhatsApp, call or email. We respond, we solve, we deliver. Always.</p></div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="sec-sm soc-section" id="connect">
+  <div class="sh c rv" style="padding:0 48px 44px;">
+    <div class="stag">Connect With Us</div>
+    <h2 class="sh2">Join the <em>Community</em></h2>
+  </div>
+  <div class="soc-row rv">
+    <a href="https://whatsapp.com/channel/0029VbCWlyv0LKZGlvztJK0p" target="_blank" class="soc"><i class="fab fa-whatsapp"></i><span>WhatsApp<br>Channel</span></a>
+    <a href="https://www.instagram.com/eshvik.in?igsh=Y3RleXVybHJxZmR1" target="_blank" class="soc"><i class="fab fa-instagram"></i><span>Instagram<br>@eshvik.in</span></a>
+    <a href="https://www.facebook.com/profile.php?id=61574304578370&mibextid=ZbWKwL" target="_blank" class="soc"><i class="fab fa-facebook-f"></i><span>Facebook<br>ESHVIK</span></a>
+    <a href="https://x.com/ESHVIK_IN" target="_blank" class="soc"><i class="fab fa-x-twitter"></i><span>X / Twitter<br>@ESHVIK_IN</span></a>
+    <a href="https://www.linkedin.com/in/eshvik-m-7934753bb?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="soc"><i class="fab fa-linkedin-in"></i><span>LinkedIn<br>Eshvik M.</span></a>
+    <a href="https://wa.me/919116356157" target="_blank" class="soc"><i class="fas fa-comment-dots"></i><span>Direct Chat<br>91163 56157</span></a>
+    <a href="tel:+917696761617" class="soc"><i class="fas fa-phone-alt"></i><span>Call Us<br>76967 61617</span></a>
+    <a href="mailto:mr.eshvik@gmail.com" class="soc"><i class="fas fa-envelope"></i><span>Email Us<br>mr.eshvik@gmail.com</span></a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec rv">
+  <h2>Start Your<br><em>ESHVIK Journey</em></h2>
+  <p>Seven verticals. One conversation. Let's build something remarkable.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/919116356157?text=Hello%20ESHVIK%2C%20I%20want%20to%20get%20started!" target="_blank" class="btn-w"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+    <a href="/membership.html" class="btn-b"><i class="fas fa-crown"></i> View Membership</a>
+    <a href="mailto:mr.eshvik@gmail.com" class="btn-b"><i class="fas fa-envelope"></i> Email Us</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="ft">
+    <div class="fb">
+      <span class="logo">ESHVIK</span>
+      <span class="lsub">India's Premier Digital Ecosystem</span>
+      <p>Building India's digital infrastructure — inclusive, intelligent, indigenous. Empowering the next generation of innovators and enterprises across every domain.</p>
+      <div class="sub-tags">
+        <a href="https://eshvik.in" target="_blank" class="stg">eshvik.in</a>
+        <a href="https://ai.eshvik.in" target="_blank" class="stg">ai.eshvik.in</a>
+        <a href="https://web.eshvik.in" target="_blank" class="stg">web.eshvik.in</a>
+        <a href="https://health.eshvik.in" target="_blank" class="stg">health.eshvik.in</a>
+        <a href="https://tech.eshvik.in" target="_blank" class="stg">tech.eshvik.in</a>
+        <a href="https://agro.eshvik.in" target="_blank" class="stg">agro.eshvik.in</a>
+        <a href="https://business.eshvik.in" target="_blank" class="stg">business.eshvik.in</a>
+        <a href="https://manpower.eshvik.in" target="_blank" class="stg">manpower.eshvik.in</a>
+      </div>
+      <span class="pwd"><i class="fas fa-bolt"></i> Powered by ESHVIK</span>
+    </div>
+    <div class="fc">
+      <h5>Ecosystem</h5>
+      <ul class="fl">
+        <li><a href="https://ai.eshvik.in" target="_blank"><i class="fas fa-microchip"></i> AI Platform</a></li>
+        <li><a href="https://web.eshvik.in" target="_blank"><i class="fas fa-code"></i> Web Services</a></li>
+        <li><a href="https://health.eshvik.in" target="_blank"><i class="fas fa-heartbeat"></i> Health Tech</a></li>
+        <li><a href="https://tech.eshvik.in" target="_blank"><i class="fas fa-robot"></i> Tech Hub</a></li>
+        <li><a href="https://agro.eshvik.in" target="_blank"><i class="fas fa-seedling"></i> Agro Tech</a></li>
+        <li><a href="https://business.eshvik.in" target="_blank"><i class="fas fa-chart-line"></i> Business Hub</a></li>
+        <li><a href="https://manpower.eshvik.in" target="_blank"><i class="fas fa-users"></i> Manpower</a></li>
+        <li><a href="/membership.html"><i class="fas fa-crown"></i> Membership</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h5>Contact</h5>
+      <ul class="fl">
+        <li><a href="mailto:mr.eshvik@gmail.com"><i class="fas fa-envelope"></i> mr.eshvik@gmail.com</a></li>
+        <li><a href="tel:+917696761617"><i class="fas fa-phone-alt"></i> 76967 61617</a></li>
+        <li><a href="https://wa.me/919116356157" target="_blank"><i class="fab fa-whatsapp"></i> 91163 56157</a></li>
+        <li><a href="https://eshvik.in" target="_blank"><i class="fas fa-globe"></i> eshvik.in</a></li>
+        <li><i class="far fa-clock"></i> 24/7 Support</li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h5>Social</h5>
+      <ul class="fl">
+        <li><a href="https://whatsapp.com/channel/0029VbCWlyv0LKZGlvztJK0p" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Channel</a></li>
+        <li><a href="https://www.instagram.com/eshvik.in" target="_blank"><i class="fab fa-instagram"></i> @eshvik.in</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61574304578370" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+        <li><a href="https://x.com/ESHVIK_IN" target="_blank"><i class="fab fa-x-twitter"></i> @ESHVIK_IN</a></li>
+        <li><a href="https://www.linkedin.com/in/eshvik-m-7934753bb" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb2">
+    <div class="fb2l">© 2026 <a href="https://eshvik.in">ESHVIK Digital Ecosystem</a> — Empowering India's Digital Future &nbsp;|&nbsp; v3.0</div>
+    <div class="fb2r">
+      <span class="fbadge"><i class="fas fa-shield-alt"></i> Innovation First</span>
+      <a href="tel:+917696761617"><i class="fas fa-phone"></i> 76967 61617</a>
+      <a href="mailto:mr.eshvik@gmail.com"><i class="fas fa-envelope"></i> mr.eshvik@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Float WA -->
+<a href="https://wa.me/919116356157?text=Hello%20ESHVIK%20Team" target="_blank" class="fwa" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- SEO JSON-LD -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"ESHVIK","url":"https://eshvik.in","description":"India's most integrated digital ecosystem — AI, Web, Health, Tech, Agro, Business & Manpower.","contactPoint":{"@type":"ContactPoint","telephone":"+91-76967-61617","contactType":"customer support","availableLanguage":["English","Hindi"]},"sameAs":["https://www.instagram.com/eshvik.in","https://www.facebook.com/profile.php?id=61574304578370","https://x.com/ESHVIK_IN","https://www.linkedin.com/in/eshvik-m-7934753bb"]}
+</script>
+
+<script>
+// Navbar scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
+});
+
+// Reveal on scroll
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting) setTimeout(()=>e.target.classList.add('in'),i*80);
+  });
+},{threshold:0.07});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// Minimal floating particles
+(function(){
+  const c=document.createElement('canvas');
+  c.style.cssText='position:fixed;inset:0;z-index:1;pointer-events:none;';
+  document.body.appendChild(c);
+  const x=c.getContext('2d');
+  let W,H,pts=[];
+  function init(){
+    W=c.width=window.innerWidth;H=c.height=window.innerHeight;
+    pts=[];const n=W<768?20:50;
+    for(let i=0;i<n;i++) pts.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*0.8+0.2,vx:(Math.random()-.5)*0.12,vy:(Math.random()-.5)*0.12,o:Math.random()*0.25+0.05});
+  }
+  function draw(){
+    x.clearRect(0,0,W,H);
+    pts.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+      x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);
+      x.fillStyle=`rgba(255,255,255,${p.o})`;x.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize',init);init();draw();
+})();
+</script>
+</body>
+</html>
